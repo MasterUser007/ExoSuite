@@ -1,0 +1,14 @@
+.md-nav__toggle,
+.md-nav__item .md-nav__toggle {
+  display: none !important;
+}
+.md-nav__link .md-icon,
+.md-nav__list .md-nav__icon {
+  display: none !important;
+}
+.md-header-nav__button .md-icon {
+  display: none !important;
+}
+.md-search-field .md-icon {
+  display: none !important;
+}

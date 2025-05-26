@@ -5,6 +5,8 @@ theme:
 
 docs_dir: docs
 site_dir: site
+extra_css:
+  - assets/stylesheets/extra.css
 
 nav:
   - Home: index.md
@@ -23,3 +25,4 @@ nav:
   - Glossary: glossary.md
   - Work Breakdown: wbs.md
   - Blueprint: BLUEPRINT.md
+
