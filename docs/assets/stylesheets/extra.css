@@ -1,14 +1,23 @@
+﻿/* docs/assets/stylesheets/extra.css */
+
+/* Hide Material theme nav toggles (carets) */
 .md-nav__toggle,
 .md-nav__item .md-nav__toggle {
   display: none !important;
 }
-.md-nav__link .md-icon,
-.md-nav__list .md-nav__icon {
+
+/* Hide sidebar file‑type SVG icons */
+.md-nav__link svg,
+.md-nav__list svg {
   display: none !important;
 }
-.md-header-nav__button .md-icon {
+
+/* Hide header right‑side icons (edit, external link) */
+.md-header-nav__button svg {
   display: none !important;
 }
-.md-search-field .md-icon {
+
+/* Hide the search magnifier */
+.md-search-field svg {
   display: none !important;
 }
