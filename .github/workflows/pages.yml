@@ -5,9 +5,9 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: read            # for checkout
-  pages: write             # for deploy
-  id-token: write          # for deploy-pages
+  contents: read    # for checkout
+  pages: write      # for Pages deployment
+  id-token: write   # for deploy-pages
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # full history for artifact upload
 
       - name: Set up Python
         uses: actions/setup-python@v4
