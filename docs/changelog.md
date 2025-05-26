@@ -1,6 +1,6 @@
-# ExoSuite Changelog
+# Changelog
 
-## [1.0.0] - Initial Release
+## - Initial Release
 ### Added
 - PrimeEngineAI, FactorEngine, QuantumHash full implementations
 - Symbolic filtering, GPU sieving, REST API, FastAPI

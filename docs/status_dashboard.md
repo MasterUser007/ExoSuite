@@ -1,4 +1,4 @@
-# ExoSuite Sync & Version Dashboard
+# Sync & Version Dashboard
 
 | Engine         | Repo              | Current Tag | Last Sync with Master | Parity Status | Changelog Updated |
 |----------------|-------------------|-------------|------------------------|----------------|-------------------|

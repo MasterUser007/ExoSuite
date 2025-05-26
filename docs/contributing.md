@@ -1,8 +1,8 @@
-# Contributing to ExoSuite
+# to ExoSuite
 
 We welcome contributions to ExoSuite! Please follow the guidelines below to help maintain consistency and code quality.
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Fork the repository
 2. Clone your fork
@@ -10,7 +10,7 @@ We welcome contributions to ExoSuite! Please follow the guidelines below to help
 4. Commit your changes with clear messages
 5. Push to your fork and submit a pull request
 
-## ✅ Contribution Checklist
+## Contribution Checklist
 
 - Follow the structure and naming conventions of the ExoProject template
 - Add tests for any new logic in `tests/`
@@ -20,18 +20,18 @@ We welcome contributions to ExoSuite! Please follow the guidelines below to help
   pre-commit run --all-files
   ```
 
-## 🧪 Test Strategy
+## Test Strategy
 
 - Unit tests should cover critical paths
 - Black-box tests go in `tests/test_exosuite.py`
 - Use `examples/` for CLI and API demonstrations
 
-## 🔒 Security & Code Quality
+## Security & Code Quality
 
 - Use `pre-commit` to scan for secrets and enforce formatting
 - Adhere to PEP8 via `flake8` or `black`
 
-## 📘 Documentation
+## Documentation
 
 - Update `README.md` or `DEVELOPER_GUIDE.md` for new components
 - Include diagrams or examples as needed in `docs/`

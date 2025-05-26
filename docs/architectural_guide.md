@@ -1,4 +1,4 @@
-# ExoSuite Architectural Guide
+# Architectural Guide
 
 ## Overview
 
@@ -11,20 +11,20 @@ Each module runs independently but shares a common symbolic core.
 
 ---
 
-## Core Components
+## Components
 
-### 🔹 Symbolic Core (Shared)
+### Symbolic Core (Shared)
 - `symbolic_factoring.py`: filtering and truncation rules
 - `shared_data_exchange.py`: common exchange protocols
 - `black_box_io.py`: standard I/O for black-box testing
 
-### 🔹 GPU Compute
+### GPU Compute
 - `gpu_miller_rabin.py`: accelerated primality tests
 - `docker-compose.yml`: containerized deployment
 
 ---
 
-## APIs & Interoperability
+## & Interoperability
 
 - FastAPI-based REST endpoints per engine
 - Swagger docs at `/docs`
@@ -33,7 +33,7 @@ Each module runs independently but shares a common symbolic core.
 
 ---
 
-## Deployment Layers
+## Layers
 
 1. **Local Dev**
    - Uvicorn + Docker
@@ -48,7 +48,7 @@ Each module runs independently but shares a common symbolic core.
 
 ---
 
-## Extension Strategy
+## Strategy
 
 - Extend symbolic logic via `symbolic_factoring.py`
 - New pipelines added in `examples/`

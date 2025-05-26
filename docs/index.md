@@ -1,4 +1,4 @@
-# Welcome to the ExoSuite Developer Portal
+# to the ExoSuite Developer Portal
 
 ExoSuite is a modular symbolic mathematics engine stack built to support large-scale prime discovery, symbolic factoring, and post-quantum cryptography workflows.
 

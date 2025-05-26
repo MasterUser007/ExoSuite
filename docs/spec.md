@@ -1,6 +1,6 @@
-# Formal API Specification for ExoSuite
+# API Specification for ExoSuite
 
-## Available APIs
+## APIs
 
 - `orchestrate_factoring(n: int) -> dict`: Runs end-to-end factoring across engines.
 

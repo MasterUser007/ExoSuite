@@ -1,4 +1,4 @@
-# Glossary of Terms (Unified)
+# of Terms (Unified)
 
 **Symbolic Filtering**: Logical pattern-based composite elimination  
 **Tiered Cache**: Hierarchical memory of symbolic rejections  
