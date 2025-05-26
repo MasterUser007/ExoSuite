@@ -1,10 +1,11 @@
-﻿site_name: ExoSuite Documentation
-
+site_name: ExoSuite
 theme:
   name: material
 
 docs_dir: docs
 site_dir: site
+
+# ← Custom CSS to hide all Material theme icons
 extra_css:
   - assets/stylesheets/extra.css
 
@@ -24,5 +25,3 @@ nav:
   - Contributing: contributing.md
   - Glossary: glossary.md
   - Work Breakdown: wbs.md
-  - Blueprint: BLUEPRINT.md
-
