@@ -1,15 +1,19 @@
-site_name: ExoSuite Documentation
-repo_url: https://github.com/your-org/exosuite
+﻿site_name: ExoSuite Documentation
+
 theme:
   name: material
+
+docs_dir: docs
+site_dir: site
+
 nav:
-  - Formulas: docs/formulas.md
-  - ML Methods: docs/ml_methods.md
   - Home: index.md
-  - Engines:
-      - PrimeEngineAI: primeengineai.md
-      - QuantumHash: quantumhash.md
-      - FactorEngine: factorengine.md
+  - Blueprint: BLUEPRINT.md
+  - Architecture Guide: architectural_guide.md
+  - Developer Guide: developer_guide.md
+  - Spec: spec.md
+  - Status Dashboard: status_dashboard.md
+  - Work Breakdown: wbs.md
   - Glossary: glossary.md
   - Contributing: contributing.md
   - Changelog: changelog.md
