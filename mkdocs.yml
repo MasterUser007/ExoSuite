@@ -7,7 +7,6 @@ docs_dir: docs
 site_dir: site
 
 nav:
-nav:
   - Home: index.md
   - Blueprint: BLUEPRINT.md
   - Architecture Guide: architectural_guide.md
@@ -23,3 +22,4 @@ nav:
   - Contributing: contributing.md
   - Glossary: glossary.md
   - Work Breakdown: wbs.md
+  - Blueprint: BLUEPRINT.md
