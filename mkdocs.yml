@@ -7,13 +7,19 @@ docs_dir: docs
 site_dir: site
 
 nav:
+nav:
   - Home: index.md
   - Blueprint: BLUEPRINT.md
   - Architecture Guide: architectural_guide.md
   - Developer Guide: developer_guide.md
-  - Spec: spec.md
+  - Specification: spec.md
   - Status Dashboard: status_dashboard.md
-  - Work Breakdown: wbs.md
-  - Glossary: glossary.md
-  - Contributing: contributing.md
+  - FactorEngine: factorengine.md
+  - Formulas: formulas.md
+  - ML Methods: ml_methods.md
+  - PrimeEngineAI: primeengineai.md
+  - QuantumHash: quantumhash.md
   - Changelog: changelog.md
+  - Contributing: contributing.md
+  - Glossary: glossary.md
+  - Work Breakdown: wbs.md
