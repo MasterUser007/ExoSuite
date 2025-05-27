@@ -1,12 +1,12 @@
-﻿from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple
 
 def symbolic_filter(batch: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
-    \"\"\"
+    """
     Filters out composite candidates based on simple digit rules:
       - Exclude any number ending in 0,2,4,5,6,8
       - Exclude any number with a digit repeated 4+ times in a row
     Returns (passed, filtered).
-    \"\"\"
+    """
     passed, filtered = [], []
     for item in batch:
         val = item['value']
