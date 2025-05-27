@@ -1,22 +1,9 @@
 site_name: ExoSuite
 nav:
   - Home: index.md
-  - Engines:
-      - PrimeEngineAI: primeengineai/index.md
-      - FactorEngine: factorengine/index.md
-      - QuantumHash: quantumhash/index.md
-  - Blueprint: blueprint/index.md
-  - Architectural Guide: architectural_guide/index.md
-  - Changelog: changelog/index.md
-  - Contributing: contributing/index.md
-  - Developer Guide: developer_guide/index.md
-  - Formulas: formulas/index.md
-  - Glossary: glossary/index.md
-  - ML Methods: ml_methods/index.md
-  - Spec: spec/index.md
-  - Status Dashboard: status_dashboard/index.md
-  - WBS: wbs/index.md
-theme:
+  - PrimeEngineAI: primeengineai/index.md
+  - FactorEngine: factorengine/index.md
+  - QuantumHash: quantumhash/index.md
   name: material
 
 docs_dir: docs
