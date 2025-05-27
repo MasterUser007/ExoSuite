@@ -8,6 +8,7 @@ from QuantumHash.src.engine_core import main_factoring_engine as qhf
 # Singleton cache manager
 cache_manager = CacheManager()
 
+
 def orchestrate_factoring(n: int) -> dict:
     """Orchestrate factoring with caching and parallel engine calls."""
     # Symbolic cache
@@ -38,28 +39,28 @@ def orchestrate_factoring(n: int) -> dict:
     with ThreadPoolExecutor() as executor:
         futures = {}
         if not sym_hit:
-            futures['pe'] = executor.submit(pef, input_number=n)
+            futures["pe"] = executor.submit(pef, input_number=n)
         if not fe_hit:
-            futures['fe'] = executor.submit(is_probably_prime, n)
+            futures["fe"] = executor.submit(is_probably_prime, n)
         if not qh_hit:
-            futures['qh'] = executor.submit(qhf, input_number=n)
+            futures["qh"] = executor.submit(qhf, input_number=n)
 
     # Collect results and update caches
     if not sym_hit:
-        pe_result = futures['pe'].result()
+        pe_result = futures["pe"].result()
         cache_manager.symbolic.set(n, pe_result)
     if not fe_hit:
-        fe_result = futures['fe'].result()
+        fe_result = futures["fe"].result()
         cache_manager.factor.set(n, fe_result)
     if not qh_hit:
-        qh_result = futures['qh'].result()
+        qh_result = futures["qh"].result()
         cache_manager.hash.set(n, qh_result)
 
     return {
-        'PrimeEngineAI': pe_result,
-        'FactorEngine': fe_result,
-        'QuantumHash': qh_result,
-        'symbolic_cache_hit': sym_hit,
-        'factor_cache_hit': fe_hit,
-        'hash_cache_hit': qh_hit
+        "PrimeEngineAI": pe_result,
+        "FactorEngine": fe_result,
+        "QuantumHash": qh_result,
+        "symbolic_cache_hit": sym_hit,
+        "factor_cache_hit": fe_hit,
+        "hash_cache_hit": qh_hit,
     }
