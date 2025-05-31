@@ -1,10 +1,13 @@
-import sys, os
-root = os.path.abspath(os.path.dirname(__file__) + '/../../')
+import os
+import sys
+
+from src.cache_manager import CacheManager
+
+root = os.path.abspath(os.path.dirname(__file__) + "/../../")
 sys.path.insert(0, root)
-sys.path.insert(0, os.path.join(root, 'ExoSuite', 'src'))
-project_root = os.path.abspath(os.path.dirname(__file__) + '/..')
-import pytest
-from cache_manager import CacheManager
+sys.path.insert(0, os.path.join(root, "ExoSuite", "src"))
+project_root = os.path.abspath(os.path.dirname(__file__) + "/..")
+
 
 def test_cache_manager_set_get():
     cm = CacheManager(max_size=2)

@@ -1,28 +1,8 @@
-site_name: ExoSuite
-nav:
-  - Home: index.md
-  - Engines:
-      - PrimeEngineAI: primeengineai/index.md
-      - FactorEngine: factorengine/index.md
-      - QuantumHash: quantumhash/index.md
-  - Blueprint: blueprint/index.md
-  - Architectural Guide: architectural_guide/index.md
-  - Changelog: changelog/index.md
-  - Contributing: contributing/index.md
-  - Developer Guide: developer_guide/index.md
-  - Formulas: formulas/index.md
-  - Glossary: glossary/index.md
-  - ML Methods: ml_methods/index.md
-  - Spec: spec/index.md
-  - Status Dashboard: status_dashboard/index.md
-  - WBS: wbs/index.md
+site_name: ExoSuite Documentation
 theme:
   name: material
-
-docs_dir: docs
-site_dir: site
-
-# ← Custom CSS to hide all Material theme icons
-extra_css:
-  - assets/stylesheets/extra.css
-
+nav:
+  - Home: index.md
+  - PrimeEngineAI: primeengineai/index.md
+  - FactorEngine: factorengine/index.md
+  - QuantumHash: quantumhash/index.md
