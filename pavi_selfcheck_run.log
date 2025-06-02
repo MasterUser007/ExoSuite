@@ -1,9 +1,0 @@
-== Pavi Self-Check (Indexed) ==
-[OK] State index loaded.
-[OK] example_file.ps1 present.
-DEBUG content for example_file.ps1:
-# ML-INSTRUMENTED
-
-[OK] example_file.ps1 ML-instrumented.
-[Pavi] STATUS: Indexed self-check PASSED. All required states correct.
-[Pavi] Ready for your next command. No action needed if you see this message!
