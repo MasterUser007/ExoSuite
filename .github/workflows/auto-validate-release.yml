@@ -1,0 +1,45 @@
+name: Pavi Automated Validation & Release
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-and-auto-merge:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PowerShell
+        uses: actions/setup-powershell@v2
+
+      - name: Run validation script (PowerShell)
+        run: |
+          pwsh -Command '
+            $Log = "repo_ghactions_validation.log";
+            Set-Content $Log "== Pavi GH Actions Validation Run $(Get-Date) ==";
+            git status | Add-Content $Log;
+            if (Test-Path .github/pavi_merge_validate.ps1) {
+              pwsh .github/pavi_merge_validate.ps1 | Tee-Object -FilePath $Log -Append;
+            }
+            git log -3 --oneline | Add-Content $Log;
+          '
+
+      - name: Upload validation log artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-log
+          path: repo_ghactions_validation.log
+
+      - name: Auto-merge PR (when all checks pass)
+        uses: pascalgn/automerge-action@v0.15.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          merge_method: merge
