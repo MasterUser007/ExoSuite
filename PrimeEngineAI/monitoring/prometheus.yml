@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'primeengineai'
+    static_configs:
+      - targets: ['localhost:8001']
+
+  - job_name: 'factorengine'
+    static_configs:
+      - targets: ['localhost:8002']
+
+  - job_name: 'quantumhash'
+    static_configs:
+      - targets: ['localhost:8003']

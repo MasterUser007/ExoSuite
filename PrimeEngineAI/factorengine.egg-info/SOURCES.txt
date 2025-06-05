@@ -1,0 +1,8 @@
+README.md
+setup.py
+factorengine.egg-info/PKG-INFO
+factorengine.egg-info/SOURCES.txt
+factorengine.egg-info/dependency_links.txt
+factorengine.egg-info/entry_points.txt
+factorengine.egg-info/requires.txt
+factorengine.egg-info/top_level.txt

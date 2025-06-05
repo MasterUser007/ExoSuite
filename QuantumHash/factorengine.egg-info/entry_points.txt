@@ -1,0 +1,2 @@
+[console_scripts]
+factorengine = engine_core:main_factoring_engine

@@ -1,0 +1,4 @@
+pytest
+pytest-cov
+coverage
+hypothesis>=6.0.0
