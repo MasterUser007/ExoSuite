@@ -1,0 +1,13 @@
+{
+  "__inputs": [],
+  "title": "PrimeEngineAI Metrics",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Candidate Throughput",
+      "targets": [
+        { "expr": "primeengineai_candidates_per_second" }
+      ]
+    }
+  ]
+}

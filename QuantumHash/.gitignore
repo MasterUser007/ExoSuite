@@ -1,0 +1,4 @@
+*.pyc
+__pycache__/
+benchmark_results.csv
+benchmark_comparison.png

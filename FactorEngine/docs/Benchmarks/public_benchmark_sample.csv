@@ -1,0 +1,3 @@
+candidate_id,digits,is_prime,symbolic_pass,gpu_sieved,remainders_passed
+1,97,1,1,1,1
+2,98,0,0,0,0

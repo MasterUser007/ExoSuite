@@ -1,0 +1,20 @@
+name: Sync From ExoSuite Master
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync-from-master:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project Repo
+        uses: actions/checkout@v3
+
+      - name: Pull from ExoSuite Master
+        run: |
+          git remote add master https://github.com/YourOrg/ExoSuite.git
+          git fetch master
+          git checkout master/main -- ./FactorEngine
+          git add .
+          git commit -m "Sync with ExoSuite master"
+          git push
