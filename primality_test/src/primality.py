@@ -38,3 +38,4 @@ def primality_batch(candidates: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
         else:
             filtered.append(item)
     return passed, filtered
+

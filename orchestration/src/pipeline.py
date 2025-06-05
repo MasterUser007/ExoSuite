@@ -41,3 +41,4 @@ def run_pipeline(batch: List[Dict]):
     final_passed = p4
 
     return {'passed': final_passed, 'filtered': filtered}
+

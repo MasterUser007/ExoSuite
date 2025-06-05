@@ -7,3 +7,4 @@ def test_remainder_divisible_by_3_or_7():
     assert {'id':1,'value':'21'} in filtered
     assert {'id':2,'value':'25'} in passed
     assert {'id':3,'value':'7'} in passed
+

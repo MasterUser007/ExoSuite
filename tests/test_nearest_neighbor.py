@@ -1,4 +1,4 @@
-import pytest
+﻿import pytest
 import sys, os
 # Ensure src on path
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + '/../src'))
@@ -18,3 +18,4 @@ def test_neighbors(p):
     # composite number factoring should produce factors >1
     assert isinstance(res_next["PrimeEngineAI"], list)
     assert res_next["PrimeEngineAI"] != [p + 1]
+

@@ -1,4 +1,4 @@
-import os
+﻿import os
 import json
 import sys
 import time
@@ -32,3 +32,4 @@ def test_persistence_and_metrics(tmp_path):
     assert 'symbolic_hits' in metrics and metrics['symbolic_hits'] >= 1
     assert 'hash_hits' in metrics and metrics['hash_hits'] >= 1
     assert 'factor_hits' in metrics and metrics['factor_hits'] >= 1
+

@@ -1,4 +1,4 @@
-# Example: Prime -> Factor -> Hash Pipeline
+﻿# Example: Prime -> Factor -> Hash Pipeline
 
 This example demonstrates how ExoSuite engines interact in sequence.
 

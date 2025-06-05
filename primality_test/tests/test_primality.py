@@ -9,3 +9,4 @@ def test_small_primes_and_composites():
     passed, filtered = primality_batch(batch)
     assert passed   == [{'id':2,'value':'13'}]
     assert filtered == [{'id':1,'value':'8'}]
+

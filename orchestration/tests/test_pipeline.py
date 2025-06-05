@@ -20,3 +20,4 @@ def test_filter_stage(monkeypatch):
     result = run_pipeline(batch)
     assert any(r['id']==2 for r in result['passed'])
     assert all(r['id']!=1 for r in result['passed'])
+

@@ -8,3 +8,4 @@ app = FastAPI(title='GPU Sieve')
 def sieve_endpoint(batch: List[Dict]):
     passed, filtered = sieve_batch(batch)
     return {'passed': passed, 'filtered': filtered}
+

@@ -1,4 +1,4 @@
-import sys, os
+﻿import sys, os
 root = os.path.abspath(os.path.dirname(__file__) + '/../../')
 sys.path.insert(0, root)
 sys.path.insert(0, os.path.join(root, 'ExoSuite', 'src'))
@@ -16,3 +16,4 @@ def test_cache_manager_set_get():
     assert cm.symbolic.get(1) is None
     assert cm.symbolic.get(2) == [2]
     assert cm.symbolic.get(3) == [3]
+

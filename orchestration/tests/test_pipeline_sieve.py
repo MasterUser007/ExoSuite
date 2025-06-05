@@ -26,3 +26,4 @@ def test_filter_and_sieve(monkeypatch):
     # Only ID=2 (value 17) should remain passed
     assert result['passed'] == [{'id':2,'value':'17'}]
     assert result['filtered'] == [{'id':1,'value':'14'}]
+

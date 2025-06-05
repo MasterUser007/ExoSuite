@@ -1,4 +1,4 @@
-import pytest
+﻿import pytest
 import time
 from exosuite_core import orchestrate_factoring
 
@@ -14,3 +14,4 @@ def test_performance_regression(n):
     orchestrate_factoring(n)
     duration = time.perf_counter() - start
     assert duration < THRESHOLD, f"Orchestration for {n} took {duration:.3f}s, exceeding {THRESHOLD}s"
+

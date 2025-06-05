@@ -1,4 +1,4 @@
-import os
+﻿import os
 import time
 import json
 from collections import OrderedDict
@@ -101,3 +101,4 @@ class CacheManager:
 import atexit
 _cm = CacheManager()
 atexit.register(_cm.persist)
+

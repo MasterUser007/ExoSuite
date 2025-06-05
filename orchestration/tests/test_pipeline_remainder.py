@@ -30,3 +30,4 @@ def test_full_filter_sieve_remainder(monkeypatch):
     # Only id=2 (25) should survive all three stages
     assert result['passed'] == [{'id':2,'value':'25'}]
     assert any(f['id']==1 for f in result['filtered']) and any(f['id']==3 for f in result['filtered'])
+

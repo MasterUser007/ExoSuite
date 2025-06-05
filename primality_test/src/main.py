@@ -8,3 +8,4 @@ app = FastAPI(title='Primality Test')
 def primality_endpoint(batch: List[Dict]):
     passed, filtered = primality_batch(batch)
     return {'passed': passed, 'filtered': filtered}
+

@@ -1,4 +1,4 @@
-from typing import List, Dict, Tuple
+﻿from typing import List, Dict, Tuple
 
 def symbolic_filter(batch: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
     """
@@ -18,3 +18,4 @@ def symbolic_filter(batch: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
             filtered.append(item); continue
         passed.append(item)
     return passed, filtered
+

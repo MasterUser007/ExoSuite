@@ -1,4 +1,4 @@
-import os
+﻿import os
 from cache_manager import CacheManager
 from concurrent.futures import ThreadPoolExecutor
 from PrimeEngineAI.src.engine_core import main_factoring_engine as pef
@@ -63,3 +63,4 @@ def orchestrate_factoring(n: int) -> dict:
         'factor_cache_hit': fe_hit,
         'hash_cache_hit': qh_hit
     }
+

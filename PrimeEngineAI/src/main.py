@@ -8,3 +8,4 @@ app = FastAPI(title='PrimeEngineAI')
 def filter_endpoint(batch: List[Dict]):
     passed, filtered = symbolic_filter(batch)
     return { 'passed': passed, 'filtered': filtered }
+

@@ -13,3 +13,4 @@ def remainder_batch(candidates: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
         else:
             passed.append(item)
     return passed, filtered
+

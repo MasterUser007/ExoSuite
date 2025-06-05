@@ -12,3 +12,4 @@ def test_filter_repeating_digits():
     passed, filtered = symbolic_filter(batch)
     assert filtered == batch
     assert passed   == []
+

@@ -33,3 +33,4 @@ def test_full_pipeline_primality(monkeypatch):
     assert result['passed'] == [{'id':3,'value':'13'}]
     assert any(f['id']==1 for f in result['filtered'])
     assert any(f['id']==2 for f in result['filtered'])
+
