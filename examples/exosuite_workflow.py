@@ -1,7 +1,8 @@
 from FactorEngine.engine_core import main_factoring_engine as factor_number
 from PrimeEngineAI.engine_core import main_factoring_engine as discover_prime
-from QuantumHash.engine_core import \
-    main_factoring_engine as quantum_hash_transform
+from QuantumHash.engine_core import (
+    main_factoring_engine as quantum_hash_transform,
+)
 
 # Step 1: Discover a prime number (simulate)
 candidate = 1299827  # Substitute with output of discover_prime() if available
