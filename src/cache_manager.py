@@ -92,9 +92,7 @@ class CacheManager:
     def persist(self):
         path = os.getenv("CACHE_PERSIST_PATH", CACHE_PERSIST_PATH)
         data = {
-            "symbolic": {
-                str(k): v for k, (v, _) in self.symbolic.cache.items()
-            },
+            "symbolic": {str(k): v for k, (v, _) in self.symbolic.cache.items()},
             "hash": {str(k): v for k, (v, _) in self.hash.cache.items()},
             "factor": {str(k): v for k, (v, _) in self.factor.cache.items()},
             "metrics": {

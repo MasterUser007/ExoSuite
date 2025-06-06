@@ -45,9 +45,7 @@ def test_full_pipeline_primality(monkeypatch):
                 }
             )
         if "/primality" in url:
-            passed = [
-                c for c in json if int(c["value"]) in (2, 3, 5, 7, 11, 13)
-            ]
+            passed = [c for c in json if int(c["value"]) in (2, 3, 5, 7, 11, 13)]
             return FakeResponse(
                 {
                     "passed": passed,
