@@ -1,5 +1,5 @@
 import pytest
-from symbolic_filter import symbolic_filter
+from PrimeEngineAI.symbolic_filter import symbolic_filter
 
 
 def test_filter_excludes_even_end():
