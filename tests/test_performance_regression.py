@@ -1,5 +1,7 @@
-import pytest
 import time
+
+import pytest
+
 from exosuite_core import orchestrate_factoring
 
 # Maximum allowable orchestration time per input (seconds)

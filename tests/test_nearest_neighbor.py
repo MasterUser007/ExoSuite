@@ -1,5 +1,7 @@
+import os
+import sys
+
 import pytest
-import sys, os
 
 # Ensure src on path
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + "/../src"))

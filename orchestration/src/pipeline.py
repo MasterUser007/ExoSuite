@@ -1,5 +1,6 @@
+from typing import Dict, List
+
 import requests
-from typing import List, Dict
 
 SERVICE_URLS = {
     "primeengineai": "http://primeengineai:8000",

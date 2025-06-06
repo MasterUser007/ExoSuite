@@ -1,10 +1,12 @@
-import sys, os
+import os
+import sys
 
 root = os.path.abspath(os.path.dirname(__file__) + "/../../")
 sys.path.insert(0, root)
 sys.path.insert(0, os.path.join(root, "ExoSuite", "src"))
 project_root = os.path.abspath(os.path.dirname(__file__) + "/..")
 import pytest
+
 from cache_manager import CacheManager
 
 

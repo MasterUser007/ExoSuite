@@ -1,6 +1,6 @@
+import json
 import os
 import time
-import json
 from collections import OrderedDict
 
 CACHE_PERSIST_PATH = os.getenv(

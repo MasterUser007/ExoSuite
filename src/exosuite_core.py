@@ -1,8 +1,9 @@
 import os
-from cache_manager import CacheManager
 from concurrent.futures import ThreadPoolExecutor
-from PrimeEngineAI.src.engine_core import main_factoring_engine as pef
+
+from cache_manager import CacheManager
 from FactorEngine.src.miller_rabin import is_probably_prime
+from PrimeEngineAI.src.engine_core import main_factoring_engine as pef
 from QuantumHash.src.engine_core import main_factoring_engine as qhf
 
 # Singleton cache manager

@@ -1,4 +1,4 @@
-from typing import List, Dict, Tuple
+from typing import Dict, List, Tuple
 
 
 def symbolic_filter(batch: List[Dict]) -> Tuple[List[Dict], List[Dict]]:

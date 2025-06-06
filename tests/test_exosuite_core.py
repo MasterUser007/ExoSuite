@@ -1,11 +1,13 @@
-import sys, os
+import os
+import sys
 
 root = os.path.abspath(os.path.dirname(__file__) + "/../../")
 sys.path.insert(0, root)
 sys.path.insert(0, os.path.join(root, "ExoSuite", "src"))
 project_root = os.path.abspath(os.path.dirname(__file__) + "/..")
 import pytest
-from exosuite_core import orchestrate_factoring, cache_manager
+
+from exosuite_core import cache_manager, orchestrate_factoring
 from PrimeEngineAI.src.engine_core import main_factoring_engine as pef
 from QuantumHash.src.engine_core import main_factoring_engine as qhf
 

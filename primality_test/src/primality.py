@@ -1,5 +1,5 @@
-from typing import List, Dict, Tuple
 import random
+from typing import Dict, List, Tuple
 
 
 def is_probable_prime(n: int, k: int = 5) -> bool:
