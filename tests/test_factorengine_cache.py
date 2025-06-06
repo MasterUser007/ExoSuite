@@ -1,10 +1,11 @@
-import sys, os
+import os
+import sys
 
 # Ensure src is on path
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + "/../src"))
 
 from cache_manager import CacheManager
-from exosuite_core import orchestrate_factoring, cache_manager
+from exosuite_core import cache_manager, orchestrate_factoring
 
 
 def test_factorengine_cache_behavior():

@@ -2,14 +2,17 @@ import pytest
 
 pytest.importorskip("hypothesis")
 
-from hypothesis import given, strategies as st
-import sys, os
+import os
+import sys
+
+from hypothesis import given
+from hypothesis import strategies as st
 
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + "/../src"))
 from exosuite_core import orchestrate_factoring
+from FactorEngine.src.miller_rabin import is_probably_prime
 from PrimeEngineAI.src.engine_core import main_factoring_engine as pef
 from QuantumHash.src.engine_core import main_factoring_engine as qhf
-from FactorEngine.src.miller_rabin import is_probably_prime
 
 
 @given(st.integers(min_value=2, max_value=5000))

@@ -1,4 +1,5 @@
 import requests
+
 from orchestration.src.pipeline import run_pipeline
 
 
@@ -38,12 +39,20 @@ def test_full_pipeline_primality(monkeypatch):
                 if not (int(c["value"]) % 3 == 0 and int(c["value"]) != 3)
             ]
             return FakeResponse(
-                {"passed": passed, "filtered": [c for c in json if c not in passed]}
+                {
+                    "passed": passed,
+                    "filtered": [c for c in json if c not in passed],
+                }
             )
         if "/primality" in url:
-            passed = [c for c in json if int(c["value"]) in (2, 3, 5, 7, 11, 13)]
+            passed = [
+                c for c in json if int(c["value"]) in (2, 3, 5, 7, 11, 13)
+            ]
             return FakeResponse(
-                {"passed": passed, "filtered": [c for c in json if c not in passed]}
+                {
+                    "passed": passed,
+                    "filtered": [c for c in json if c not in passed],
+                }
             )
         raise RuntimeError(f"Unexpected URL: {url}")
 

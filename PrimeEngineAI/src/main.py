@@ -1,5 +1,6 @@
+from typing import Dict, List
+
 from fastapi import FastAPI
-from typing import List, Dict
 from symbolic_filter import symbolic_filter
 
 app = FastAPI(title="PrimeEngineAI")

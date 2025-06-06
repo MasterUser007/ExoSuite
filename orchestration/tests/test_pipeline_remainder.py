@@ -1,4 +1,5 @@
 import requests
+
 from orchestration.src.pipeline import run_pipeline
 
 
@@ -17,7 +18,10 @@ def test_full_filter_sieve_remainder(monkeypatch):
     batch = [
         {"id": 1, "value": "30"},  # filtered by mod2 in sieve
         {"id": 2, "value": "25"},  # passes sieve, mod-3/7 check passes
-        {"id": 3, "value": "21"},  # sieve passes, remainder filters (21 % 3==0)
+        {
+            "id": 3,
+            "value": "21",
+        },  # sieve passes, remainder filters (21 % 3==0)
     ]
 
     def fake_post(url, json):
@@ -38,7 +42,10 @@ def test_full_filter_sieve_remainder(monkeypatch):
                 if not (int(c["value"]) % 3 == 0 and int(c["value"]) != 3)
             ]
             return FakeResponse(
-                {"passed": passed, "filtered": [c for c in json if c not in passed]}
+                {
+                    "passed": passed,
+                    "filtered": [c for c in json if c not in passed],
+                }
             )
         raise RuntimeError(f"Unexpected URL: {url}")
 

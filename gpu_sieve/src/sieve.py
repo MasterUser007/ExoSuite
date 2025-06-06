@@ -1,4 +1,4 @@
-from typing import List, Dict, Tuple
+from typing import Dict, List, Tuple
 
 # A simple sieve removing multiples of small primes [2,3,5,7,11]
 SMALL_PRIMES = [2, 3, 5, 7, 11]

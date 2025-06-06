@@ -1,5 +1,6 @@
+from typing import Dict, List
+
 from fastapi import FastAPI
-from typing import List, Dict
 from remainder import remainder_batch
 
 app = FastAPI(title="Remainder Analysis")

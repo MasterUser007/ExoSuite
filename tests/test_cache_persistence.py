@@ -1,11 +1,11 @@
-import os
 import json
+import os
 import sys
 import time
 
 # Setup import path
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + "/../src"))
-from cache_manager import CacheManager, CACHE_PERSIST_PATH
+from cache_manager import CACHE_PERSIST_PATH, CacheManager
 
 
 def test_persistence_and_metrics(tmp_path):

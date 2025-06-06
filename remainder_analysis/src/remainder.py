@@ -1,4 +1,4 @@
-from typing import List, Dict, Tuple
+from typing import Dict, List, Tuple
 
 # Apply an additional mod‑3 and mod‑7 filter:
 SMALL_PRIMES = [3, 7]
