@@ -11,7 +11,9 @@ def test_concurrent_orchestration_basic():
     cache_manager.hash.cache.clear()
     res = orchestrate_factoring(91)  # 91 = 7*13
     assert res["PrimeEngineAI"] == [7, 13]
-    assert res["FactorEngine"] is False or isinstance(res["FactorEngine"], bool)
+    assert res["FactorEngine"] is False or isinstance(
+        res["FactorEngine"], bool
+    )
     assert res["QuantumHash"] == [7, 13]
     # Cache hits on second call
     res2 = orchestrate_factoring(91)
