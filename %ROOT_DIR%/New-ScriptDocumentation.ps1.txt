@@ -109,7 +109,7 @@ Function New-ScriptDocumentation {
             }
         } Else {
             Write-Error "The folder '$Folder' doesn't exist!"
-        }     
+        }
     }
 
     If ($Result.Count -ge 1) {
@@ -125,7 +125,7 @@ Function New-ScriptDocumentation {
         Documentation = $Documentation
         Scripts       = $Result
     }
-    
+
     Return $EndResult
 
     #TODO: Find a way to automatically parse script files to find all assemblies
