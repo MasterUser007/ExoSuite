@@ -1,0 +1,20 @@
+﻿[mypy]
+install_types = True
+namespace_packages = False
+explicit_package_bases = .
+
+disable_error_code = name-defined
+
+disable_error_code = name-defined
+
+
+disable_error_code = name-defined
+
+
+
+
+
+
+
+
+
