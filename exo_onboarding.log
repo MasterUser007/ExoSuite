@@ -1,0 +1,221 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250602143515
+Username: LAPTOP-JRNI3T1A\leebo
+RunAs User: LAPTOP-JRNI3T1A\leebo
+Configuration Name: 
+Machine: LAPTOP-JRNI3T1A (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 16708
+PSVersion: 5.1.22621.4391
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.4391
+BuildVersion: 10.0.22621.4391
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> Write-Host "`n==== ExoSuite Onboarding: Welcome Estefan! ====" -ForegroundColor Cyan
+
+==== ExoSuite Onboarding: Welcome Estefan! ====
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> Write-Host "Running self-tests..." -ForegroundColor Yellow
+Running self-tests...
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> # Required modules (edit as needed for your environment)
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> $RequiredModules = @{
+    "ps2exe" = "$HOME\OneDrive\Documents\WindowsPowerShell\Modules\ps2exe\1.0.15\ps2exe.psm1"
+    # Add others as needed
+}
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> foreach ($mod in $RequiredModules.Keys) {
+    $modPath = $RequiredModules[$mod]
+    if (Test-Path $modPath) {
+        try {
+            Import-Module $modPath -Force -ErrorAction Stop
+            Write-Host "$mod module imported from $modPath" -ForegroundColor Green
+        } catch {
+            Write-Host "FAILED to import $mod: $($_.Exception.Message)" -ForegroundColor Red
+        }
+    } else {
+        Write-Host "$mod module not found at $modPath" -ForegroundColor Red
+    }
+}
+At line:8 char:42
++             Write-Host "FAILED to import $mod: $($_.Exception.Message ...
++                                          ~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+At line:8 char:42
++             Write-Host "FAILED to import $mod: $($_.Exception.Message ...
++                                          ~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name
+character. Consider using ${} to delimit the name.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordExcep
+   tion
+    + FullyQualifiedErrorId : InvalidVariableReferenceWithDrive
+
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> # PS2EXE command check
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> if (Get-Command Invoke-PS2EXE -ErrorAction SilentlyContinue) {
+    Write-Host "PS2EXE ready: Invoke-PS2EXE is available." -ForegroundColor Green
+} else {
+    Write-Host "PS2EXE not properly registered or failed import!" -ForegroundColor Red
+}
+PS2EXE ready: Invoke-PS2EXE is available.
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> # Self-test (if present)
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> $SelfTestScript = Join-Path $BasePath "pavi_selfcheck.ps1"
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> if (Test-Path $SelfTestScript) {
+    Write-Host "Running self-check script..." -ForegroundColor Yellow
+    try {
+        & $SelfTestScript
+        Write-Host "Self-check completed." -ForegroundColor Green
+    } catch {
+        Write-Host "Self-check failed: $($_.Exception.Message)" -ForegroundColor Red
+    }
+} else {
+    Write-Host "Self-check script not found at $SelfTestScript" -ForegroundColor Red
+}
+Self-check script not found at C:\Users\leebo\OneDrive\Desktop\exosuite_optimized\pavi_selfcheck.ps1
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> # Demo: compile and run onboarding EXE
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> $DemoPS = Join-Path $BasePath "hello_estefan.ps1"
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> $DemoEXE = Join-Path $BasePath "hello_estefan.exe"
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> Set-Content -Path $DemoPS -Value 'Write-Host "Hello, Estefan! This is your onboarding EXE."' -Force
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> if (Get-Command Invoke-PS2EXE -ErrorAction SilentlyContinue) {
+    try {
+        Invoke-PS2EXE $DemoPS $DemoEXE -NoConsole
+        Write-Host "Demo EXE compiled successfully." -ForegroundColor Green
+        Start-Process $DemoEXE
+    } catch {
+        Write-Host "Failed to compile or run demo EXE: $($_.Exception.Message)" -ForegroundColor Red
+    }
+} else {
+    Write-Host "Cannot compile demo EXE: Invoke-PS2EXE missing." -ForegroundColor Red
+}
+PS2EXE-GUI v0.5.0.31 by Ingo Karstein, reworked and GUI support by Markus Scholtes
+
+Reading input file C:\Users\leebo\OneDrive\Desktop\exosuite_optimized\hello_estefan.ps1
+Compiling file...
+Output file C:\Users\leebo\OneDrive\Desktop\exosuite_optimized\hello_estefan.exe written
+Demo EXE compiled successfully.
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> Write-Host "Onboarding Complete! Ready to rock." -ForegroundColor Green
+Onboarding Complete! Ready to rock.
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> if ($Transcript) { Stop-Transcript | Out-Null }
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> Write-Host "`n(Onboarding log saved to: $LogPath)" -ForegroundColor Yellow
+
+(Onboarding log saved to: C:\Users\leebo\OneDrive\Desktop\exosuite_optimized\exo_onboarding.log)
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> powershell -ExecutionPolicy Bypass -File .\exo_onboarding.ps1
+
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> <#
+.SYNOPSIS
+    ExoSuite Self-Healing Onboarding Script
+.DESCRIPTION
+    Run this as 'exo_onboarding.ps1'. If missing, it auto-creates itself as a template and tells the user to rerun.
+    Includes robust logging, error handling, and clear color output.
+#>
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> # --- 1. Self-healing: Ensure correct filename and path ---
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> $ExpectedName = 'exo_onboarding.ps1'
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> $CurrentScript = $MyInvocation.MyCommand.Path
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> $CurrentDir = $PWD.Path
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> # If not running as the intended file, create the file and prompt
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> if (-not $CurrentScript -or -not ($CurrentScript -like "*$ExpectedName")) {
+    $ScriptPath = Join-Path $CurrentDir $ExpectedName
+    if (-not (Test-Path $ScriptPath)) {
+        Write-Host "Onboarding script '$ExpectedName' not found. Creating template at $ScriptPath..." -ForegroundColor Yellow
+        @'
+Write-Host "`n==== ExoSuite Onboarding: Welcome! ====" -ForegroundColor Cyan
+Write-Host "Running self-tests..." -ForegroundColor Yellow
+Write-Host "Onboarding Complete! Ready to rock." -ForegroundColor Green
+'@ | Set-Content -Path $ScriptPath -Force
+
+        Write-Host "Template created. Please edit and rerun with:" -ForegroundColor Yellow
+        Write-Host "    powershell -ExecutionPolicy Bypass -File .\$ExpectedName" -ForegroundColor Yellow
+        exit 1
+    }
+    else {
+        Write-Host "Please run the onboarding script with:" -ForegroundColor Yellow
+        Write-Host "    powershell -ExecutionPolicy Bypass -File .\$ExpectedName" -ForegroundColor Yellow
+        exit 1
+    }
+}
+Onboarding script 'exo_onboarding.ps1' not found. Creating template at C:\Users\leebo\OneDrive\Desktop\exosuite_optimized\exo_onboarding.ps1...
+Template created. Please edit and rerun with:
+    powershell -ExecutionPolicy Bypass -File .\exo_onboarding.ps1
+**********************
+Windows PowerShell transcript end
+End time: 20250602144108
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20250602145339
+Username: LAPTOP-JRNI3T1A\leebo
+RunAs User: LAPTOP-JRNI3T1A\leebo
+Configuration Name: 
+Machine: LAPTOP-JRNI3T1A (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7144
+PSVersion: 5.1.22621.4391
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.4391
+BuildVersion: 10.0.22621.4391
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> # === 2. SELF-HEALING: AUTO-RECREATE IF NOT RUNNING FROM CORRECT FILE ===
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> $ExpectedName = 'exo_onboarding.ps1'
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> $CurrentScript = $MyInvocation.MyCommand.Path
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> if (-not $CurrentScript -or -not ($CurrentScript -like "*$ExpectedName")) {
+    $ScriptPath = Join-Path $CurrentDir $ExpectedName
+    if (-not (Test-Path $ScriptPath)) {
+        Write-Host "Onboarding script '$ExpectedName' not found. Creating template and restarting..." -ForegroundColor Yellow
+        @"
+# Auto-generated by ExoSuite onboarding
+powershell -ExecutionPolicy Bypass -File .\$ExpectedName
+"@ | Set-Content -Path $ScriptPath -Force
+        # Re-invoke self
+        powershell -ExecutionPolicy Bypass -File $ScriptPath
+        exit 0
+    } else {
+        # Re-invoke self from correct file
+        powershell -ExecutionPolicy Bypass -File $ScriptPath
+        exit 0
+    }
+}
+
+**********************
+Windows PowerShell transcript end
+End time: 20250602145341
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20250602145916
+Username: LAPTOP-JRNI3T1A\leebo
+RunAs User: LAPTOP-JRNI3T1A\leebo
+Configuration Name: 
+Machine: LAPTOP-JRNI3T1A (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 3360
+PSVersion: 5.1.22621.4391
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.4391
+BuildVersion: 10.0.22621.4391
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> # --- 3. Actual onboarding experience ---
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> Write-Host "`n==== ExoSuite Onboarding: Welcome! ====" -ForegroundColor Cyan
+
+==== ExoSuite Onboarding: Welcome! ====
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> Start-Sleep -Milliseconds 500
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> # You can add live module checks/imports here
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> Write-Host "Running self-tests..." -ForegroundColor Yellow
+Running self-tests...
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> Start-Sleep -Milliseconds 700
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> # For demo, add PS2EXE test or more here if needed
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> Write-Host "Onboarding Complete! Ready to rock." -ForegroundColor Green
+Onboarding Complete! Ready to rock.
+PS C:\Users\leebo\OneDrive\Desktop\exosuite_optimized> try { Stop-Transcript | Out-Null } catch {}
+**********************
+Windows PowerShell transcript end
+End time: 20250602145918
+**********************
