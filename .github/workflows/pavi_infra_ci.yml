@@ -1,0 +1,27 @@
+name: Pavi '"${dept}"' CI/CD
+on:
+  push:
+    paths:
+      - "departments/'"${dept}"'/**"
+  pull_request:
+    paths:
+      - "departments/'"${dept}"'/**"
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -r departments/'"${dept}"'/requirements-extra.txt
+      - name: Department Validate
+        run: |
+          python departments/'"${dept}"'/validate.py
+      - name: Notify
+        run: |
+          curl -X POST -H "Content-Type: application/json" -d "{\"content\": \"['"${dept}"'] Workflow finished: ${{ job.status }}\"}" ${{ secrets.PAVI_WEBHOOK_URL }}
