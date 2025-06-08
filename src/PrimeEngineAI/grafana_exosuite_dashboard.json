@@ -1,0 +1,46 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "type": "dashboard",
+        "name": "Annotations & Alerts",
+        "enable": true
+      }
+    ]
+  },
+  "panels": [
+    {
+      "title": "Plugin Usage Count",
+      "type": "graph",
+      "targets": [
+        {
+          "expr": "plugin_usage_total",
+          "legendFormat": "{{plugin_name}}"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "title": "Plugin Score Histogram",
+      "type": "heatmap",
+      "targets": [
+        {
+          "expr": "plugin_score_distribution_bucket",
+          "legendFormat": "{{plugin_name}}"
+        }
+      ],
+      "heatmap": {
+        "color": {
+          "mode": "spectrum"
+        }
+      },
+      "id": 2
+    }
+  ],
+  "title": "ExoSuite Plugin Metrics",
+  "editable": true,
+  "refresh": "5s",
+  "schemaVersion": 30,
+  "version": 1
+}

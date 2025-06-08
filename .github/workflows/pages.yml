@@ -1,0 +1,49 @@
+﻿name: Build and Deploy Docs
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read    # for checkout
+  pages: write      # for deploy
+  id-token: write   # for deploy-pages
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs mkdocs-material
+
+      - name: Build site
+        run: mkdocs build --site-dir site
+
+      - name: Upload Pages Artifact
+        # v3 is required because v2 used upload-artifact@v3 under‑the‑hood (now deprecated) :contentReference[oaicite:3]{index=3}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        # v4 is the current supported deploy action for Pages :contentReference[oaicite:4]{index=4}
+        uses: actions/deploy-pages@v4

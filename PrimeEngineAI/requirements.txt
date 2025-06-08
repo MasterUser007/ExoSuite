@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 
+=======
+﻿fastapi
+uvicorn
+pytest
+>>>>>>> 3453edc (chore(repo): full monorepo restructure, test/config updates, and CI setup)

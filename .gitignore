@@ -4,7 +4,10 @@ __pycache__/
 *.swp
 *.bak
 tmp/
+<<<<<<< HEAD
 
 __pycache__/
 
 *.pyc
+=======
+>>>>>>> 3453edc (chore(repo): full monorepo restructure, test/config updates, and CI setup)

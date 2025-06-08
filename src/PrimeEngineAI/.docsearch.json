@@ -1,0 +1,18 @@
+{
+  "index_name": "exosuite",
+  "start_urls": [
+    {
+      "url": "https://yourdomain.github.io/ExoSuite/",
+      "selectors": {
+        "lvl0": "header h1",
+        "lvl1": "main h2",
+        "lvl2": "main h3",
+        "text": "main p, main li"
+      }
+    }
+  ],
+  "sitemap_urls": ["https://yourdomain.github.io/ExoSuite/sitemap.xml"],
+  "stop_urls": [],
+  "selectors_exclude": [],
+  "js_render": false
+}

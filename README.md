@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)
 ![ExoSuite Architecture](./exosuite_architecture.png)
 
@@ -45,3 +46,10 @@ python examples/demo_run.py
 ```bash
 pytest tests/
 ```
+=======
+# ExoSuite
+
+![CI](https://github.com/MasterUser007/ExoSuite/actions/workflows/ci.yml/badge.svg)
+
+Welcome to ExoSuite � Symbolic Prime Discovery and Factor Intelligence Suite.
+>>>>>>> 3453edc (chore(repo): full monorepo restructure, test/config updates, and CI setup)
