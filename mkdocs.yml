@@ -1,0 +1,5 @@
+site_name: ExoSuite Documentation
+nav:
+  - Home: index.md
+  - Architecture: docs/architecture.md
+  - API Reference: docs/api_reference.md

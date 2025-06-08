@@ -1,0 +1,7 @@
+PrimeEngineAI
+QuantumHash
+exosuite
+gpu_sieve
+orchestration
+primality_test
+remainder_analysis
