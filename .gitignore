@@ -1,6 +1,12 @@
-﻿.venv/
-site/
 __pycache__/
-*.swp
-*.bak
-tmp/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+.vscode/
+.idea/
+*.sublime-*
+.DS_Store
+Thumbs.db
+.pytest_cache/
