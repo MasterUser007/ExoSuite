@@ -1,12 +1,5 @@
-from typing import Dict, List
+def remainder_analysis_main():
+    print('Remainder analysis placeholder')
 
-from fastapi import FastAPI
-from remainder import remainder_batch
-
-app = FastAPI(title="Remainder Analysis")
-
-
-@app.post("/remainder")
-def remainder_endpoint(batch: List[Dict]):
-    passed, filtered = remainder_batch(batch)
-    return {"passed": passed, "filtered": filtered}
+if __name__ == '__main__':
+    remainder_analysis_main()

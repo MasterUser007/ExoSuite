@@ -1,11 +1,5 @@
-from typing import Dict, List
-from fastapi import FastAPI
-from primality import primality_batch
+def primality_main():
+    print('Primality test placeholder')
 
-app = FastAPI(title="Primality Test")
-
-
-@app.post("/primality")
-def primality_endpoint(batch: List[Dict]):
-    passed, filtered = primality_batch(batch)
-    return {"passed": passed, "filtered": filtered}
+if __name__ == '__main__':
+    primality_main()
