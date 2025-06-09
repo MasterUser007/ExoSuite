@@ -1,6 +1,4 @@
 def primality_main():
-    print('Primality test module start')
-    # Implement primality testing logic here
-
+    print('Primality test')
 if __name__ == '__main__':
     primality_main()

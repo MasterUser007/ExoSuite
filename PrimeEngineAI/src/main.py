@@ -1,6 +1,4 @@
 def main():
-    print('PrimeEngineAI main execution start')
-    # Add prime engine initialization and processing here
-
+    print('PrimeEngineAI main')
 if __name__ == '__main__':
     main()

@@ -1,6 +1,4 @@
 def run_workflow():
-    print('Running ExoSuite workflow')
-    # Add workflow orchestration steps here
-
+    print('ExoSuite workflow')
 if __name__ == '__main__':
     run_workflow()
