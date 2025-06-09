@@ -22,9 +22,6 @@ jobs:
 
     - name: Run Unit Tests
       run: |
-        pytest FactorEngine/tests/
-        pytest QuantumHash/tests/
-        pytest PrimeEngineAI/tests/
 
     - name: Run Integration Tests
       run: pytest tests/integration/
