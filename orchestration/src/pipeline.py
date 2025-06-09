@@ -9,6 +9,7 @@ SERVICE_URLS = {
     "pavi": "http://pavi:8080",
 }
 
+
 def run_pipeline(batch: List[Dict]):
     filtered = []
 
