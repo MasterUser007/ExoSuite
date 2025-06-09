@@ -1,4 +1,4 @@
-﻿name: Python CI
+name: Python CI
 
 on:
   push:
@@ -8,27 +8,28 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
-
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.x'
 
-      - name: Install dependencies
+      - name: Install root requirements
+        run: pip install -r requirements.txt
+
+      - name: Install engine requirements (ignore errors for now)
         run: |
-          python -m pip install --upgrade pip setuptools wheel
-          pip install -r requirements.txt
+          pip install -r FactorEngine/requirements.txt || true
+          pip install -r QuantumHash/requirements.txt || true
+          pip install -r PrimeEngineAI/requirements.txt || true
 
-      - name: Lint with Black & Flake8
+      - name: Lint
         run: |
           black --check .
           flake8 .
 
-      - name: Run tests
-        run: |
-          pytest --maxfail=1 --disable-warnings -q
+      - name: Test
+        run: pytest --maxfail=1 --disable-warnings -q
