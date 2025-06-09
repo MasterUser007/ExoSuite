@@ -1,2 +1,2 @@
-def exosuite_core():
-    print("ExoSuite core is OK.")
+def core_function():
+    print('Exosuite core placeholder')

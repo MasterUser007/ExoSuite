@@ -1,5 +1,5 @@
-def main():
-    print("Primality test main is OK.")
+def primality_main():
+    print('Primality test placeholder')
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    primality_main()

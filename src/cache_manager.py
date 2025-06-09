@@ -1,9 +1,6 @@
 class CacheManager:
     def __init__(self):
-        self.cache = {}
+        pass
 
-    def set(self, k, v):
-        self.cache[k] = v
-
-    def get(self, k):
-        return self.cache.get(k)
+    def get(self, key):
+        return None
