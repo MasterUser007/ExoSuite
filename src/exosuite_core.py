@@ -1,2 +1,3 @@
 def core_function():
-    print('Exosuite core placeholder')
+    print('ExoSuite core engine function running')
+    # Implement core engine logic here
