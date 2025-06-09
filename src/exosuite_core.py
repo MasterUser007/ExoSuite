@@ -1,2 +1,2 @@
 def core_function():
-    print('Exosuite core placeholder')
+    print('ExoSuite core function')
