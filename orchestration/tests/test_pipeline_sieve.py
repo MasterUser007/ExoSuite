@@ -1,28 +1,22 @@
-﻿import requests
-from orchestration.src.pipeline import run_pipeline
+import sys
+import os
 
-class FakeResponse:
-    def __init__(self, data):
-        self._data = data
-    def raise_for_status(self): pass
-    def json(self): return self._data
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-def test_filter_and_sieve(monkeypatch):
-    batch = [{'id':1,'value':'14'}, {'id':2,'value':'17'}]
+from src.cache_manager import CacheManager
+from primality_test.src.primality import is_prime
 
-    def fake_post(url, json):
-        if '/filter' in url:
-            # filter stage passes both through
-            return FakeResponse({'passed': json, 'filtered': []})
-        if '/sieve' in url:
-            # sieve stage drops even multiples
-            passed = [c for c in json if int(c['value']) % 2 != 0]
-            return FakeResponse({'passed': passed, 'filtered': [c for c in json if int(c['value']) % 2 == 0]})
-        raise RuntimeError(f"Unexpected URL: {url}")
+def test_sieve_and_primality():
+    sieve_limit = 20
+    is_prime_list = [is_prime(n) for n in range(2, sieve_limit + 1)]
+    expected = [True, True, False, True, False, True, False, False, False, True, False, True, False, False, False, True, False, True, False]
+    assert is_prime_list == expected
 
-    monkeypatch.setattr(requests, 'post', fake_post)
-
-    result = run_pipeline(batch)
-    # Only ID=2 (value 17) should remain passed
-    assert result['passed'] == [{'id':2,'value':'17'}]
-    assert result['filtered'] == [{'id':1,'value':'14'}]
+def test_cache_manager():
+    cm = CacheManager()
+    cm.symbolic.set("foo", 42)
+    assert cm.symbolic.get("foo") == 42
+    cm.hash.set(100, "bar")
+    assert cm.hash.get(100) == "bar"
+    cm.factor.set(17, True)
+    assert cm.factor.get(17) is True
