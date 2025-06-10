@@ -83,4 +83,8 @@ All cache state is persisted to disk under ~/.exosuite/cache/ with TTL and LRU e
 - **Symbol:** A canonical representation of a prime or factor used for caching.  
 - **Prefilter:** A lightweight test to eliminate non‑primes before heavy computation.  
 
+<<<<<<< HEAD
 ---
+=======
+---
+>>>>>>> 3453edc (chore(repo): full monorepo restructure, test/config updates, and CI setup)

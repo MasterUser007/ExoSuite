@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 site_name: ExoSuite
 nav:
   - Home: index.md
@@ -26,3 +27,10 @@ site_dir: site
 extra_css:
   - assets/stylesheets/extra.css
 
+=======
+site_name: ExoSuite Documentation
+nav:
+  - Home: index.md
+  - Architecture: docs/architecture.md
+  - API Reference: docs/api_reference.md
+>>>>>>> 3453edc (chore(repo): full monorepo restructure, test/config updates, and CI setup)

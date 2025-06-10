@@ -1,0 +1,20 @@
+name: Update Changelog
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  generate-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Generate changelog
+        run: |
+          echo "## [Auto Log] $(date)" >> CHANGELOG.md
+          git log -1 --pretty=format:"- %s" >> CHANGELOG.md
+          git add CHANGELOG.md
+          git commit -m "Auto-update changelog"
+          git push
