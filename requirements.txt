@@ -1,6 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 black
 flake8
 =======
 >>>>>>> 3453edc (chore(repo): full monorepo restructure, test/config updates, and CI setup)
 pytest
+=======
+# Runtime dependencies
+>>>>>>> fc333e9 (Project hygiene: ignore venv, add CI workflow, standardize layout)

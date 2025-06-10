@@ -1,6 +1,5 @@
-﻿.venv/
-site/
 __pycache__/
+<<<<<<< HEAD
 *.swp
 *.bak
 tmp/
@@ -11,3 +10,16 @@ __pycache__/
 *.pyc
 =======
 >>>>>>> 3453edc (chore(repo): full monorepo restructure, test/config updates, and CI setup)
+=======
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+.vscode/
+.idea/
+*.sublime-*
+.DS_Store
+Thumbs.db
+.pytest_cache/
+>>>>>>> fc333e9 (Project hygiene: ignore venv, add CI workflow, standardize layout)
