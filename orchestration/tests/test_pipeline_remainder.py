@@ -22,7 +22,7 @@ def test_full_filter_sieve_remainder(monkeypatch):
         if '/remainder' in url:
             passed = [c for c in json if not (int(c['value']) % 3 == 0 and int(c['value']) != 3)]
             return FakeResponse({'passed': passed, 'filtered': [c for c in json if c not in passed]})
-        raise RuntimeError(f\"Unexpected URL: {url}\")
+        raise RuntimeError(f"Unexpected URL: {url}")
 
     monkeypatch.setattr(requests, 'post', fake_post)
 

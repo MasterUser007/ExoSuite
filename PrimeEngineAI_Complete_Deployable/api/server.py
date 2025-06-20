@@ -1,8 +1,8 @@
-
-from fastapi import FastAPI
+﻿from fastapi import FastAPI
 from src.prime_pipeline import prime_discovery_pipeline
 
 app = FastAPI()
+
 
 @app.get("/discover/")
 def discover_primes(start: int, end: int):

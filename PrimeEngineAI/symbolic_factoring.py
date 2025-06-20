@@ -1,4 +1,5 @@
-# symbolic_factoring.py
+﻿# symbolic_factoring.py
+
 
 def basic_symbolic_filters(n: int) -> bool:
     """
@@ -11,6 +12,6 @@ def basic_symbolic_filters(n: int) -> bool:
         return True
     if n % 5 == 0 and n != 5:
         return True
-    if str(n)[-1] in ['0', '4', '6', '8']:  # fast digit screen
+    if str(n)[-1] in ["0", "4", "6", "8"]:  # fast digit screen
         return True
     return False

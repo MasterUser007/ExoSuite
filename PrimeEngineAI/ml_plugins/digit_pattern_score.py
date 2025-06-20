@@ -1,6 +1,7 @@
-from ml_plugins.base import BaseMLPlugin
+﻿from ml_plugins.base import BaseMLPlugin
 from ml_plugins.plugin_logger import log_plugin_usage
 from ml_plugins.plugin_metrics import log_metrics
+
 
 class DigitPatternScore(BaseMLPlugin):
     def __init__(self):

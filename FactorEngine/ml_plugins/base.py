@@ -1,4 +1,5 @@
-# ml_plugins/base.py
+﻿# ml_plugins/base.py
+
 
 class BaseMLPlugin:
     def __init__(self):

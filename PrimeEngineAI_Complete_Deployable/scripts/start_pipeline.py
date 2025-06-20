@@ -1,5 +1,4 @@
-
-from src.prime_pipeline import prime_discovery_pipeline
+﻿from src.prime_pipeline import prime_discovery_pipeline
 
 if __name__ == "__main__":
     start, end = 100000, 100100

@@ -11,13 +11,13 @@ SERVICE_URLS = {
 
 def run_pipeline(batch: List[Dict]):
     # Stage 1: Symbolic Filter
-    r1 = requests.post(f\"{SERVICE_URLS['primeengineai']}/filter\", json=batch)
+    r1 = requests.post(f"{SERVICE_URLS['primeengineai']}/filter", json=batch)
     r1.raise_for_status()
     d1 = r1.json()
     passed, filtered = d1['passed'], d1['filtered']
 
     # Stage 2: GPU Sieve
-    r2 = requests.post(f\"{SERVICE_URLS['gpu_sieve']}/sieve\", json=passed)
+    r2 = requests.post(f"{SERVICE_URLS['gpu_sieve']}/sieve", json=passed)
     r2.raise_for_status()
     d2 = r2.json()
     p2, f2 = d2['passed'], d2['filtered']
@@ -25,7 +25,7 @@ def run_pipeline(batch: List[Dict]):
     batch2 = p2
 
     # Stage 3: Remainder Analysis
-    r3 = requests.post(f\"{SERVICE_URLS['remainder_analysis']}/remainder\", json=batch2)
+    r3 = requests.post(f"{SERVICE_URLS['remainder_analysis']}/remainder", json=batch2)
     r3.raise_for_status()
     d3 = r3.json()
     p3, f3 = d3['passed'], d3['filtered']
@@ -33,7 +33,7 @@ def run_pipeline(batch: List[Dict]):
     batch3 = p3
 
     # Stage 4: Primality Test
-    r4 = requests.post(f\"{SERVICE_URLS['primality_test']}/primality\", json=batch3)
+    r4 = requests.post(f"{SERVICE_URLS['primality_test']}/primality", json=batch3)
     r4.raise_for_status()
     d4 = r4.json()
     p4, f4 = d4['passed'], d4['filtered']

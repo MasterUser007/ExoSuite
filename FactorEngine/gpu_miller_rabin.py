@@ -1,4 +1,5 @@
-# gpu_miller_rabin.py
+﻿# gpu_miller_rabin.py
+
 
 def is_probable_prime(n: int, k: int = 5) -> bool:
     """
@@ -6,6 +7,7 @@ def is_probable_prime(n: int, k: int = 5) -> bool:
     Currently CPU-based, to be replaced with GPU/CUDA.
     """
     import random
+
     if n <= 1 or n == 4:
         return False
     if n <= 3:

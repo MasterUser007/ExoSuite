@@ -1,0 +1,4 @@
+- name: Set PYTHONPATH for FactorEngine
+  run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/FactorEngine:$(pwd)/FactorEngine/src" >> $GITHUB_ENV
+- name: Run FactorEngine tests
+  run: pytest FactorEngine/tests/

@@ -1,5 +1,4 @@
-
-class SymbolicCache:
+﻿class SymbolicCache:
     def __init__(self):
         self.cache = {}
 

@@ -1,6 +1,6 @@
-
-from .symbolic_cache import SymbolicCache
+﻿from .symbolic_cache import SymbolicCache
 from .miller_rabin import is_probable_prime
+
 
 def prime_discovery_pipeline(start, end):
     cache = SymbolicCache()

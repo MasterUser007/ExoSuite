@@ -1,5 +1,5 @@
+﻿import random
 
-import random
 
 def is_probable_prime(n, k=5):
     if n <= 1:

@@ -1,1 +1,1 @@
-# Shared cache/gap exchange API
+﻿# Shared cache/gap exchange API

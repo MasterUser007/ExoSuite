@@ -1,12 +1,14 @@
-import sys, os
-root = os.path.abspath(os.path.dirname(__file__) + '/../../')
+﻿import sys, os
+
+root = os.path.abspath(os.path.dirname(__file__) + "/../../")
 sys.path.insert(0, root)
-sys.path.insert(0, os.path.join(root, 'ExoSuite', 'src'))
-project_root = os.path.abspath(os.path.dirname(__file__) + '/..')
+sys.path.insert(0, os.path.join(root, "ExoSuite", "src"))
+project_root = os.path.abspath(os.path.dirname(__file__) + "/..")
 import pytest
 from exosuite_core import orchestrate_factoring, cache_manager
 from PrimeEngineAI.src.engine_core import main_factoring_engine as pef
 from QuantumHash.src.engine_core import main_factoring_engine as qhf
+
 
 @pytest.mark.parametrize("n", [15, 77])
 def test_orchestrate_and_cache(n):

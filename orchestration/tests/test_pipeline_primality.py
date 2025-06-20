@@ -25,7 +25,7 @@ def test_full_pipeline_primality(monkeypatch):
         if '/primality' in url:
             passed = [c for c in json if int(c['value']) in (2,3,5,7,11,13)]
             return FakeResponse({'passed': passed, 'filtered': [c for c in json if c not in passed]})
-        raise RuntimeError(f\"Unexpected URL: {url}\")
+        raise RuntimeError(f"Unexpected URL: {url}")
 
     monkeypatch.setattr(requests, 'post', fake_post)
 

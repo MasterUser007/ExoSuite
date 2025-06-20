@@ -1,4 +1,4 @@
-def main_factoring_engine(input_number: int) -> list:
+﻿def main_factoring_engine(input_number: int) -> list:
     """Full trial-division factoring stub for black-box tests."""
     n = input_number
     factors = []

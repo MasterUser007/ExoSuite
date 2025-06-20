@@ -1,4 +1,5 @@
-from typing import List, Dict, Tuple
+﻿from typing import List, Dict, Tuple
+
 
 def symbolic_filter(batch: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
     """
@@ -9,12 +10,14 @@ def symbolic_filter(batch: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
     """
     passed, filtered = [], []
     for item in batch:
-        val = item['value']
+        val = item["value"]
         # Rule: last digit exclusion
-        if val[-1] in {'0','2','4','5','6','8'}:
-            filtered.append(item); continue
+        if val[-1] in {"0", "2", "4", "5", "6", "8"}:
+            filtered.append(item)
+            continue
         # Rule: 4+ repeating digits
-        if any(d*4 in val for d in '0123456789'):
-            filtered.append(item); continue
+        if any(d * 4 in val for d in "0123456789"):
+            filtered.append(item)
+            continue
         passed.append(item)
     return passed, filtered

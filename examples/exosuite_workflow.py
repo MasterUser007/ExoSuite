@@ -1,3 +1,4 @@
+﻿"""
 # Example: Prime -> Factor -> Hash Pipeline
 
 This example demonstrates how ExoSuite engines interact in sequence.
@@ -18,3 +19,4 @@ print("Factors:", factors)
 hash_output = quantum_hash_transform(candidate)
 print("QuantumHash Result:", hash_output)
 ```
+"""

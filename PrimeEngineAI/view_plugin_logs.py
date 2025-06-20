@@ -1,7 +1,8 @@
-# view_plugin_logs.py
+﻿# view_plugin_logs.py
 
 import json
 from pathlib import Path
+
 
 def view_logs(file_path="logs/plugin_usage.log", plugin_filter=None):
     path = Path(file_path)
@@ -14,12 +15,16 @@ def view_logs(file_path="logs/plugin_usage.log", plugin_filter=None):
                 entry = json.loads(line.strip())
                 if plugin_filter and entry["plugin"] != plugin_filter:
                     continue
-                print(f"[{entry['timestamp']}] {entry['plugin']} => Score: {entry['score']} (Input: {entry['input']})")
+                print(
+                    f"[{entry['timestamp']}] {entry['plugin']} => Score: {entry['score']} (Input: {entry['input']})"
+                )
             except json.JSONDecodeError:
                 continue
 
+
 if __name__ == "__main__":
     import argparse
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--plugin", type=str, help="Filter by plugin name")
     args = parser.parse_args()

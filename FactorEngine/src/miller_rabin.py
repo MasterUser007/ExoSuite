@@ -1,4 +1,5 @@
-import random
+﻿import random
+
 
 def is_probable_prime(n: int, k: int = 5) -> bool:
     if n <= 1:
@@ -25,6 +26,7 @@ def is_probable_prime(n: int, k: int = 5) -> bool:
         else:
             return False
     return True
+
 
 # Alias for test compatibility
 is_probably_prime = is_probable_prime

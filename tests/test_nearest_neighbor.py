@@ -1,11 +1,13 @@
-import pytest
+﻿import pytest
 import sys, os
+
 # Ensure src on path
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + '/../src'))
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + "/../src"))
 from exosuite_core import orchestrate_factoring
 
 # Known primes list for test
 PRIMES = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+
 
 @pytest.mark.parametrize("p", PRIMES)
 def test_neighbors(p):

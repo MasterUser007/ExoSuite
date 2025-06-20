@@ -1,1 +1,1 @@
-# Sample run configuration for a batch prime search between 10^100 and 10^101
+﻿# Sample run configuration for a batch prime search between 10^100 and 10^101
