@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿import requests
 from orchestration.src.pipeline import run_pipeline
 
@@ -37,3 +38,7 @@ def test_filter_and_sieve(monkeypatch):
     # Only ID=2 (value 17) should remain passed
     assert result["passed"] == [{"id": 2, "value": "17"}]
     assert result["filtered"] == [{"id": 1, "value": "14"}]
+=======
+def test_pipeline_sieve_basic():
+    assert True
+>>>>>>> 68f649f10b9a89a6adbe875b4fef357adef21fe4

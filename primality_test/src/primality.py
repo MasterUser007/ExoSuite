@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿from typing import List, Dict, Tuple
 import random
 
@@ -40,3 +41,21 @@ def primality_batch(candidates: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
         else:
             filtered.append(item)
     return passed, filtered
+=======
+def is_prime(n: int) -> bool:
+    """
+    Simple primality test.
+    """
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+>>>>>>> 68f649f10b9a89a6adbe875b4fef357adef21fe4

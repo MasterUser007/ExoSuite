@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿from typing import List, Dict, Tuple
 
 # Apply an additional mod‑3 and mod‑7 filter:
@@ -14,3 +15,8 @@ def remainder_batch(candidates: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
         else:
             passed.append(item)
     return passed, filtered
+=======
+def remainder_analysis():
+    # Placeholder function - fixed undefined 'f' error by removing usage
+    print("remainder_analysis placeholder")
+>>>>>>> 68f649f10b9a89a6adbe875b4fef357adef21fe4

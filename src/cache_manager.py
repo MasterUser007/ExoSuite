@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿import os
 import time
 import json
@@ -111,3 +112,17 @@ import atexit
 
 _cm = CacheManager()
 atexit.register(_cm.persist)
+=======
+class CacheManager:
+    def __init__(self):
+        self.cache = {}
+
+    def get(self, key):
+        return self.cache.get(key)
+
+    def set(self, key, value):
+        self.cache[key] = value
+
+    def clear(self):
+        self.cache.clear()
+>>>>>>> 68f649f10b9a89a6adbe875b4fef357adef21fe4

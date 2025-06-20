@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿import os
 from cache_manager import CacheManager
 from concurrent.futures import ThreadPoolExecutor
@@ -64,3 +65,7 @@ def orchestrate_factoring(n: int) -> dict:
         "factor_cache_hit": fe_hit,
         "hash_cache_hit": qh_hit,
     }
+=======
+def core_function():
+    print("ExoSuite core function")
+>>>>>>> 68f649f10b9a89a6adbe875b4fef357adef21fe4

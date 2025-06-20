@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿"""
 # Example: Prime -> Factor -> Hash Pipeline
 
@@ -20,3 +21,11 @@ hash_output = quantum_hash_transform(candidate)
 print("QuantumHash Result:", hash_output)
 ```
 """
+=======
+def run_workflow():
+    print("ExoSuite workflow")
+
+
+if __name__ == "__main__":
+    run_workflow()
+>>>>>>> 68f649f10b9a89a6adbe875b4fef357adef21fe4

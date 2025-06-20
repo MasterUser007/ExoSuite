@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿import requests
 from typing import List, Dict
 
@@ -41,3 +42,7 @@ def run_pipeline(batch: List[Dict]):
     final_passed = p4
 
     return {'passed': final_passed, 'filtered': filtered}
+=======
+def pipeline():
+    pass
+>>>>>>> 68f649f10b9a89a6adbe875b4fef357adef21fe4
